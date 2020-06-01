@@ -57,7 +57,7 @@ def compute_bic(kmeans,X):
 kmax=50
 
 """
-Following Group: Click embedding
+Following Group: Click Embedding
 """
 
 with open('jsons/pos_user_click_embed.json','r') as load_f:
@@ -82,7 +82,7 @@ with open("pickles/pos_click_bic_50.pickle",'wb') as file:
 
 
 """
-Ignoring Group: Click embedding
+Ignoring Group: Click Embedding
 """
 
 with open('jsons/neg_user_click_embed.json','r') as load_f:
@@ -106,7 +106,7 @@ with open("pickles/neg_click_bic_50.pickle",'wb') as file:
 
 
 """
-Following Group: Purchase embedding
+Following Group: Purchase Embedding
 """
 
 with open('jsons/pos_user_purchase_embed.json','r') as load_f:
@@ -131,7 +131,7 @@ with open("pickles/pos_purchase_bic_50.pickle",'wb') as file:
 
 
 """
-Ignoring Group: Purchase embedding
+Ignoring Group: Purchase Embedding
 """
 
 with open('jsons/neg_user_purchase_embed.json','r') as load_f:
