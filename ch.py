@@ -3,7 +3,7 @@ import pandas as pd
 
 from sklearn.cluster import KMeans
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import calinski_harabasz_scores
+from sklearn.metrics import calinski_harabasz_score
 
 import pickle
 from scipy import stats
@@ -31,8 +31,8 @@ nsamp=50
 ch_50=dict()
 st=19
 ed=29
-ch_f=c.zeros((ed-st+1,nsamp))
-ch_l=c.zeros((ed-st+1,nsamp))
+ch_f=np.zeros((ed-st+1,nsamp))
+ch_l=np.zeros((ed-st+1,nsamp))
 
 for k in tqdm(range(st,ed+1)):
 	idx=k-st
@@ -70,8 +70,8 @@ nsamp=50
 ch_50=dict()
 st=15
 ed=25
-ch_f=c.zeros((ed-st+1,nsamp))
-ch_l=c.zeros((ed-st+1,nsamp))
+ch_f=np.zeros((ed-st+1,nsamp))
+ch_l=np.zeros((ed-st+1,nsamp))
 
 for k in tqdm(range(st,ed+1)):
 	idx=k-st
@@ -108,8 +108,8 @@ nsamp=50
 ch_50=dict()
 st=6
 ed=16
-ch_f=c.zeros((ed-st+1,nsamp))
-ch_l=c.zeros((ed-st+1,nsamp))
+ch_f=np.zeros((ed-st+1,nsamp))
+ch_l=np.zeros((ed-st+1,nsamp))
 
 for k in tqdm(range(st,ed+1)):
 	idx=k-st
@@ -147,14 +147,12 @@ nsamp=50
 ch_50=dict()
 st=4
 ed=14
-ch_f=c.zeros((ed-st+1,nsamp))
-ch_l=c.zeros((ed-st+1,nsamp))
-
+ch_f=np.zeros((ed-st+1,nsamp))
+ch_l=np.zeros((ed-st+1,nsamp))
 for k in tqdm(range(st,ed+1)):
 	idx=k-st
 	for t in tqdm(range(nsamp)):
-		x_samp,_=train_test_split(item_emb, test_size=0.512,random_state=t)#click:0.512 purchase:0.305
-		x_train,_=train_test_split(x_samp, test_size=0.2,random_state=t) 
+		x_train,_=train_test_split(item_emb, test_size=0.2,random_state=t) 
 		fir_train=x_train[:,0,:]
 		last_train=x_train[:,1,:]
 		_,y=kmeans_clustering(fir_train,k)
