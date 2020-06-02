@@ -35,7 +35,7 @@ ed=29
 ari=np.zeros((ed-st+1,nsamp))
 for k in tqdm(range(st,ed+1)):
 	idx=k-st
-	print(k)
+	# print(k)
 	for t in tqdm(range(nsamp)):
 		x_samp,_=train_test_split(item_emb, test_size=0.512,random_state=t)#click:0.512 purchase:0.305
 		x_train,_=train_test_split(x_samp, test_size=0.2,random_state=t) 
@@ -48,7 +48,6 @@ ari_50['50']=ari
 ari_50['average']=np.mean(ari,axis=1)
 
 
-# for k in range(kmax-5,kmax+6):
 for k in range(st,ed+1):
 	idx=k-st
 	print(k,'\t',ari[idx].mean())
@@ -73,7 +72,7 @@ ed=25
 ari=np.zeros((ed-st+1,nsamp))
 for k in tqdm(range(st,ed+1)):
 	idx=k-st
-	print(k)
+	# print(k)
 	for t in tqdm(range(nsamp)):
 		x_train,_=train_test_split(item_emb, test_size=0.2,random_state=t) #
 		fir_train=x_train[:,0,:]
@@ -85,7 +84,6 @@ ari_50['50']=ari
 ari_50['average']=np.mean(ari,axis=1)
 
 
-# for k in range(kmax-5,kmax+6):
 for k in range(st,ed+1):
 	idx=k-st
 	print(k,'\t',ari[idx].mean())
@@ -110,7 +108,7 @@ ed=16
 ari=np.zeros((ed-st+1,nsamp))
 for k in tqdm(range(st,ed+1)):
 	idx=k-st
-	print(k)
+	# print(k)
 	for t in tqdm(range(nsamp)):
 		x_samp,_=train_test_split(item_emb, test_size=0.305,random_state=t)#click:0.512 purchase:0.305
 		x_train,_=train_test_split(x_samp, test_size=0.2,random_state=t) 
@@ -123,7 +121,6 @@ ari_50['50']=ari
 ari_50['average']=np.mean(ari,axis=1)
 
 
-# for k in range(kmax-5,kmax+6):
 for k in range(st,ed+1):
 	idx=k-st
 	print(k,'\t',ari[idx].mean())
@@ -148,7 +145,7 @@ ed=14
 ari=np.zeros((ed-st+1,nsamp))
 for k in tqdm(range(st,ed+1)):
 	idx=k-st
-	print(k)
+	# print(k)
 	for t in tqdm(range(nsamp)):
 		x_train,_=train_test_split(item_emb, test_size=0.2,random_state=t) #
 		fir_train=x_train[:,0,:]
@@ -160,7 +157,6 @@ ari_50['50']=ari
 ari_50['average']=np.mean(ari,axis=1)
 
 
-# for k in range(kmax-5,kmax+6):
 for k in range(st,ed+1):
 	idx=k-st
 	print(k,'\t',ari[idx].mean())
