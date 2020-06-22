@@ -29,7 +29,10 @@ def compute_bic(kmeans,X):
     -----------------------------------------
     BIC value
 
-    credit to 
+    Source:
+    -------------------------------------------
+    https://stats.stackexchange.com/questions/90769/using-bic-to-estimate-the-number-of-k-in-kmeans?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
     """
     # assign centers and labels
     centers = [kmeans.cluster_centers_]
