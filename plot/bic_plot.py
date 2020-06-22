@@ -5,7 +5,7 @@ import json
 import pickle
 
 # Click embedding in Following group
-with open("pickles/pos_click_bic_50.pickle",'rb') as file:
+with open("../pickles/pos_click_bic_50.pickle",'rb') as file:
     bic=pickle.load(file)
 
 """
