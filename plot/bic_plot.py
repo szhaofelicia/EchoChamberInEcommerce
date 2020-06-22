@@ -10,15 +10,15 @@ with open("../pickles/pos_click_bic_50.pickle",'rb') as file:
 
 """
 # Click embedding in Ignoring group
-with open("pickles/neg_click_bic_50.pickle",'rb') as file:
+with open("../pickles/neg_click_bic_50.pickle",'rb') as file:
     bic=pickle.load(file)
 
 # Purchase embedding in Following group
-with open("pickles/pos_purchase_bic_50.pickle",'rb') as file:
+with open("../pickles/pos_purchase_bic_50.pickle",'rb') as file:
     bic=pickle.load(file)
 
 # Purchase embedding in Ignoring group
-with open("pickles/neg_purchase_bic_50.pickle",'rb') as file:
+with open("../pickles/neg_purchase_bic_50.pickle",'rb') as file:
     bic=pickle.load(file)
 """
 
