@@ -4,17 +4,20 @@ import matplotlib.pyplot as plt
 import json
 import pickle
 
-
+# Click embedding in Following group
 with open("pickles/pos_click_bic_50.pickle",'rb') as file:
     bic=pickle.load(file)
 
 """
+# Click embedding in Ignoring group
 with open("pickles/neg_click_bic_50.pickle",'rb') as file:
     bic=pickle.load(file)
 
+# Purchase embedding in Following group
 with open("pickles/pos_purchase_bic_50.pickle",'rb') as file:
     bic=pickle.load(file)
 
+# Purchase embedding in Ignoring group
 with open("pickles/neg_purchase_bic_50.pickle",'rb') as file:
     bic=pickle.load(file)
 """
@@ -54,6 +57,7 @@ plt.annotate('K=%d'%kopt,
                  'alpha': 0.7
              })
 plt.title("Click Embedding of Following Group",fontsize=16,fontweight='bold')
+
 """
 plt.title("Click Embedding of Ignoring Group",fontsize=16,fontweight='bold')
 plt.title("Purchase Embedding of Following Group",fontsize=16,fontweight='bold')
