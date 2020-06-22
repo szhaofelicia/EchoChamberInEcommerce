@@ -3,7 +3,6 @@ import pandas as pd
 
 from sklearn.cluster import KMeans
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import pairwise_distances_chunked
 
 import pickle
 from scipy import stats
