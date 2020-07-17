@@ -6,7 +6,7 @@ The codebase is useful for measuring Echo Chamber in e-commerce recommender syst
 
 1. User embeddings:
 
-    * Click embeddings of Following Group ([jsons/pos_user_click_embed.json](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/jsons/pose_user_click_embed.json)) and Ignoring Group ([jsons/neg_user_click_embed.json](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/jsons/neg_user_click_embed.json))
+    * Click embeddings of Following Group ([jsons/pos_user_click_embed.json](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/jsons/pos_user_click_embed.json)) and Ignoring Group ([jsons/neg_user_click_embed.json](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/jsons/neg_user_click_embed.json))
     * Purchase embeddings of Following group ([jsons/pos_user_purchase_embed.json](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/jsons/pos_user_purchase_embed.json)) and Ignoring group ([jsons/neg_user_purchase_embed.json](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/jsons/neg_user_purchase_embed.json))
 
 2. Content diversity based on item embeddings:
