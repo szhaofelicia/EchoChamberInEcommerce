@@ -27,7 +27,7 @@ We measure the effect in two steps:
 
 
 ## Presentation
-The video (ind0007.mp4) and slides (presentation.pdf) are for Our presentation on SIGIR 2020.
+The [video](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/ind0007.mp4) and slides (presentation.pdf) are for Our presentation on SIGIR 2020.
 
 
 ## Citation
