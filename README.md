@@ -16,18 +16,18 @@ We measure the effect in two steps:
 
 1. Measure reinforcement in user interests via clustering analysis.
 
-    * Detect clustering tendency (hopkins.py)
-    * Select proper clustering settings (bic.py) and plot results for each user group (plot/bic_plot.py).
-    * Measure internal validity index: Calinski-Harabasz (ch.py), boxplots of eacho group (plot/ch_plot.py).
-    * Measure external validity index: Adjusted Rand Index(ari.py), boxplots of eacho group (plot/ari_plot.py).
-    * Results are saved in pickle files (pickle/*.pickle).
+    * Detect clustering tendency ([hopkins.py](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/hopkins.py))
+    * Select proper clustering settings ([bic.py](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/bic.py)) and plot results for each user group ([plot/bic_plot.py](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/plot/bic_plot.py)).
+    * Measure internal validity index: Calinski-Harabasz (ch.py), boxplots of eacho group ([plot/ch_plot.py](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/plot/ch_plot.py)).
+    * Measure external validity index: Adjusted Rand Index(ari.py), boxplots of eacho group ([plot/ari_plot.py](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/plot/ari_plot.py)).
+    * Results are saved in pickle files ([pickle/*.pickle](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/pickle)).
 2. Measure changes of content diversity in recommendations.
 
-    * Computer average content diversity in each group (diversity.py), plot distribution of content diversityn (plot/diversity_plot.py).
+    * Computer average content diversity in each group ([diversity.py](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/diversity.py)), plot distribution of content diversityn ([plot/diversity_plot.py](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/plot/diversity_plot.py)).
 
 
 ## Presentation
-The [video](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/ind0007.mp4) and slides (presentation.pdf) are for Our presentation on SIGIR 2020.
+The [video](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/ind0007.mp4) and [slides](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/presentation.pdf) are for Our presentation on SIGIR 2020.
 
 
 ## Citation
