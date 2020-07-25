@@ -6,6 +6,9 @@ from scipy import stats
 
 from tqdm import tqdm
 import json
+import numpy as np
+
+import matplotlib.pyplot as plt
 
 np.random.seed(0)
 
@@ -15,16 +18,15 @@ Following group
 with open('../jsons/pos_user_display_diversity.json','r') as load_f:
     user_display = json.load(load_f)
 pos_div=np.array(list(user_display.values())) 
-pos_samp, _ = train_test_split(pos_div, test_size=0.6531,random_state=0) # display
 
-fir_div=pos_samp[:,0] 
-last_div=pos_samp[:,1] 
+fir_div=pos_div[:,0] 
+last_div=pos_div[:,1] 
 
 plt.grid()
 plt.hist(fir_div,50,color='xkcd:turquoise', edgecolor='tab:gray')
 plt.xlabel('Content Diversity',fontsize=16)
 plt.ylabel('Number of Users',fontsize=16)
-plt.title('First Blocks of Foloowing Group',fontsize=16,fontweight='bold')
+plt.title('First Blocks of Following Group',fontsize=16,fontweight='bold')
 plt.xticks(np.arange(0.950,1.155,0.025))
 plt.yticks(np.arange(0,455,50))
 plt.show()
