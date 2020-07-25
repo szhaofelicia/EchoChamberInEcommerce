@@ -19,20 +19,19 @@ def compute_bic(kmeans,X):
     """
     Computes the BIC metric for a given clusters
 
-    Parameters:
+    Inputs:
     -----------------------------------------
     kmeans:  List of clustering object from scikit learn
 
-    X     :  multidimension np array of data points
+    X     : Multidimentional data points
 
-    Returns:
+    Output:
     -----------------------------------------
-    BIC value
+    List of BIC value
 
-    Source:
-    -------------------------------------------
+    Reference:
+    -----------------------------------------
     https://stats.stackexchange.com/questions/90769/using-bic-to-estimate-the-number-of-k-in-kmeans?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-
     """
     # assign centers and labels
     centers = [kmeans.cluster_centers_]
@@ -46,8 +45,8 @@ def compute_bic(kmeans,X):
 
     #compute variance for all clusters beforehand
     cl_var = (1.0 / (N - m) / d) * sum([sum(distance.cdist(X[np.where(labels == i)], [centers[0][i]], 
-             'euclidean')**2) for i in range(m)]) #>0
-    const_term = 0.5 * m * np.log(N) * (d+1) #>0
+             'euclidean')**2) for i in range(m)]) 
+    const_term = 0.5 * m * np.log(N) * (d+1) 
 
     BIC = np.sum([n[i] * np.log(n[i]) -
                n[i] * np.log(N) -
