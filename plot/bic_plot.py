@@ -46,8 +46,8 @@ plt.annotate('maximum',
              })
 
 plt.annotate('K=%d'%kopt,
-             xy = (kopt, np.mean(bic,axis=1)[0]),     # click: 0, purchase: 48 
-             xytext = (kopt-6, np.mean(bic,axis=1)[0]), # click: 0, purchase: 48 
+             xy = (kopt, min(np.mean(bic,axis=1)[0],np.mean(bic,axis=1)[48])),      
+             xytext = (kopt-6, min(np.mean(bic,axis=1)[0],np.mean(bic,axis=1)[48])), 
              weight = 'bold', 
              color = 'xkcd:coral',
              arrowprops = {
@@ -62,6 +62,5 @@ plt.title("Click Embedding of Following Group",fontsize=16,fontweight='bold')
 plt.title("Click Embedding of Ignoring Group",fontsize=16,fontweight='bold')
 plt.title("Purchase Embedding of Following Group",fontsize=16,fontweight='bold')
 plt.title("Purchase Embedding of Ignoring Group",fontsize=16,fontweight='bold')
-
 """
 plt.show()
