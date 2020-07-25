@@ -55,6 +55,7 @@ def compute_bic(kmeans,X):
 
     return(BIC)
 
+np.random.seed(0)
 
 kmax=50
 
@@ -152,7 +153,7 @@ for k in tqdm(range(2,kmax+1)):
 bic=np.array(bic)
 
 
-with open("../dict_pickles/kselection/neg_purchase_bic_50.pickle",'wb') as file:
+with open("pickles/neg_purchase_bic_50.pickle",'wb') as file:
     pickle.dump(bic,file)
 
 
