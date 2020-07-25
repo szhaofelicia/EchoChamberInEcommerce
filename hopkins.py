@@ -9,6 +9,7 @@ from tqdm import tqdm
 import json
 import pickle
 
+np.random.seed(0)
 
 # Measure Hopkins Statistic
 
@@ -36,8 +37,8 @@ hopkins_dict['last']=h_last
 hopkins_dict['first average']=np.mean(h_fir)
 hopkins_dict['last average']=np.mean(h_last)
 print('50',np.mean(h_fir),np.mean(h_last))
-with open("pickles/pos_click_hopkins_50.pickle",'wb') as file:
-	pickle.dump(hopkins_dict,file)
+# with open("pickles/pos_click_hopkins_50.pickle",'wb') as file:
+# 	pickle.dump(hopkins_dict,file)
 
 """
 Ignoring Group: Click Embedding
@@ -62,8 +63,8 @@ hopkins_dict['last']=h_last
 hopkins_dict['first average']=np.mean(h_fir)
 hopkins_dict['last average']=np.mean(h_last)
 print('50',np.mean(h_fir),np.mean(h_last))
-with open("pickles/neg_click_hopkins_50.pickle",'wb') as file:
-	pickle.dump(hopkins_dict,file)
+# with open("pickles/neg_click_hopkins_50.pickle",'wb') as file:
+# 	pickle.dump(hopkins_dict,file)
 """
 Following Group: Purchase Embedding
 
@@ -88,8 +89,8 @@ hopkins_dict['last']=h_last
 hopkins_dict['first average']=np.mean(h_fir)
 hopkins_dict['last average']=np.mean(h_last)
 print('50',np.mean(h_fir),np.mean(h_last))
-with open("pickles/pos_purchase_hopkins_50.pickle",'wb') as file:
-	pickle.dump(hopkins_dict,file)
+# with open("pickles/pos_purchase_hopkins_50.pickle",'wb') as file:
+# 	pickle.dump(hopkins_dict,file)
 
 """
 Ignoring Group: Purchase Embedding
@@ -107,15 +108,15 @@ h_last=np.zeros((50,))
 for t in range(50):
 	fir_list=item_emb[:,0,:] # len * 128
 	last_list=item_emb[:,1,:] # len * 128
-	h_fir[t]=1-hopkins(fir_list,int(0.1 *len(fir_list))) #h=0.5,x; x
-	h_last[t]=1-hopkins(last_list,int(0.1 *len(last_list))) #h=0.5,x; x
+	h_fir[t]=1-hopkins(fir_list,int(0.1 *len(fir_list))) 
+	h_last[t]=1-hopkins(last_list,int(0.1 *len(last_list))) #
 hopkins_dict['first']=h_fir
 hopkins_dict['last']=h_last
 hopkins_dict['first average']=np.mean(h_fir)
 hopkins_dict['last average']=np.mean(h_last)
 print('50',np.mean(h_fir),np.mean(h_last))
-with open("pickles/neg_purchase_hopkins_50.pickle",'wb') as file:
-	pickle.dump(hopkins_dict,file)
+# with open("pickles/neg_purchase_hopkins_50.pickle",'wb') as file:
+# 	pickle.dump(hopkins_dict,file)
 
 
 #################################################################################################
@@ -134,11 +135,11 @@ pos_all=np.concatenate([pos_fir.reshape(50,1),pos_last.reshape(50,1)],axis=1)
 
 with open('pickles/neg_click_hopkins_50.pickle', 'rb') as f: # include char and title(item)
     hopkins_dict=pickle.load(f)
-neg_fir=hopkins_dict['first'] 
+neg_fir=hopkins_dict['first']
 neg_last=hopkins_dict['last']
-neg_all=np.concatenate([neg_fir,neg_last],axis=1)# 50*2
+neg_all=np.concatenate([neg_fir.reshape(50,1),neg_last.reshape(50,1)],axis=1)# 50*2
 
-all_hopkins=np.concatenate([pos_all..reshape(50,1),neg_all..reshape(50,1)],axis=0) # 100*2
+all_hopkins=np.concatenate([pos_all,neg_all],axis=0) # 100*2
 all_fir=all_hopkins[:,0] # 100
 all_last=all_hopkins[:,1] # 100
 
@@ -177,7 +178,7 @@ print(pos_fir.mean(),pos_last.mean())
 
 ## test of normal distribution
 kstest_=stats.kstest(pos_fir, 'norm') #(D,p-value)
-anderson_=stats.anderson(pos_firs,dist='norm')
+anderson_=stats.anderson(pos_fir,dist='norm')
 
 print('First block')
 print(kstest_) 
@@ -275,9 +276,9 @@ with open('pickles/neg_purchase_hopkins_50.pickle', 'rb') as f: # include char a
     hopkins_dict=pickle.load(f)
 neg_fir=hopkins_dict['first'] 
 neg_last=hopkins_dict['last']
-neg_all=np.concatenate([neg_fir,neg_last],axis=1)# 50*2
+neg_all=np.concatenate([neg_fir.reshape(50,1),neg_last.reshape(50,1)],axis=1)# 50*2
 
-all_hopkins=np.concatenate([pos_all..reshape(50,1),neg_all..reshape(50,1)],axis=0) # 100*2
+all_hopkins=np.concatenate([pos_all,neg_all],axis=0) # 100*2
 all_fir=all_hopkins[:,0] # 100
 all_last=all_hopkins[:,1] # 100
 
@@ -316,7 +317,7 @@ print(pos_fir.mean(),pos_last.mean())
 
 ## test of normal distribution
 kstest_=stats.kstest(pos_fir, 'norm') #(D,p-value)
-anderson_=stats.anderson(pos_firs,dist='norm')
+anderson_=stats.anderson(pos_fir,dist='norm')
 
 print('First block')
 print(kstest_) 
