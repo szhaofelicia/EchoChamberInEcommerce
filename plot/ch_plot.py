@@ -6,34 +6,36 @@ import json
 import pickle
 
 # Click embedding in Following group
-with open("../pickles/pos_click_ch_50.pickle",'rb') as file:
-    ch_dict=pickle.load(file)
-
 st=19
 ed=29
+with open("../pickles/pos_click_ch_50_k%dto%d.pickle"%(st,ed),'rb') as file:
+    ch_dict=pickle.load(file)
 
 """
 # Click embedding in Ignoring group
-with open("../pickles/neg_click_ch_50.pickle",'rb') as file:
-    ch_dict=pickle.load(file)
 st=15
 ed=25
+with open("../pickles/neg_click_ch_50_k%dto%d.pickle"%(st,ed),'rb') as file:
+    ch_dict=pickle.load(file)
+
 
 # Purchase embedding in Following group
-with open("../pickles/pos_purchase_ch_50.pickle",'rb') as file:
-    ch_dict=pickle.load(file)
 st=6
 ed=16
+with open("../pickles/pos_purchase_ch_50_k%dto%d.pickle"%(st,ed),'rb') as file:
+    ch_dict=pickle.load(file)
+
 
 # Purchase embedding in Ignoring group
-with open("../pickles/neg_purchase_ch_50.pickle",'rb') as file:
-    ch_dict=pickle.load(file)
 st=4
 ed=14
+with open("../pickles/neg_purchase_ch_50_k%dto%d.pickle"%(st,ed),'rb') as file:
+    ch_dict=pickle.load(file)
+
 """
 
-ch_first=ch_dict['first'][0]
-ch_last=ch_dict['last'][0]
+ch_first=ch_dict['first']
+ch_last=ch_dict['last']
 
 ch_first=ch_first.reshape(11,1,-1)# 20*50
 ch_last=ch_last.reshape(11,1,-1) # 20*50
@@ -69,7 +71,7 @@ patch0 = mpatches.Patch(color='magenta', label='First')
 patch1 = mpatches.Patch(color='yellow', label='Last')
 
 plt.legend(handles=[patch0,patch1])
-plt.title("Click Embedding of Ignoring Group",fontsize=16,fontweight='bold')
+plt.title("Click Embedding of Following Group",fontsize=16,fontweight='bold')
 
 """
 plt.title("Click Embedding of Ignoring Group",fontsize=16, fontweight='bold')
