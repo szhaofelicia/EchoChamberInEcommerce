@@ -23,7 +23,7 @@ We measure the effect in two steps:
     * Results are saved in pickle files ([pickles/*.pickle](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/pickles)).
 2. Measure changes of content diversity in recommendations.
 
-    * Computer average content diversity in each group ([diversity.py](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/diversity.py)), plot distribution of content diversityn ([plot/diversity_plot.py](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/plot/diversity_plot.py)).
+    * Compute average content diversity in each group ([diversity.py](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/diversity.py)), plot distribution of content diversityn ([plot/diversity_plot.py](https://github.com/szhaofelicia/EchoChamberInEcommerce/blob/master/plot/diversity_plot.py)).
 
 
 ## Presentation
